@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 95vh;
+  align-items: center;
+  background-color: aquamarine;
+}
+.napit {
+
+  width: 330px;
+  background-color: lavender;
+
+  height: 70px;
+}

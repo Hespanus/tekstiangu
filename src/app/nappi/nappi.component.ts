@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./nappi.component.css']
 })
 export class NappiComponent implements OnInit {
-  @Input() text = '';
+  @Input() text: String = '';
   @Output() btnClick = new EventEmitter();
 
   constructor() { }

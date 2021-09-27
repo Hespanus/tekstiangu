@@ -1,8 +1,8 @@
 export interface Kysymys {
   id: number;
-  kysymys: String;
-  kuva?: String;
-  Vastaukset?: Array<{ nimi?: String, pisteet?: number, kysymys?:number, info?: String}>;
+  kysymys: string;
+  kuva?: string;
+  Vastaukset?: Array<{ nimi?: string, pisteet?: number, kysymys?:number, info?: string}>;
 }
 
 

@@ -1,6 +1,5 @@
-
-<p>{{kysymykset}}{{pisteetmax}}</p>
-
-<app-nappi text="testi" (btnClick)="valinta()"></app-nappi>
+<ng-container *ngFor="let vastaus of kysymykset[haku()].Vastaukset">
+  <app-nappi  [text]="vastaus.nimi" (btnClick)="valinta(vastaus)"></app-nappi>
+</ng-container>
 
 

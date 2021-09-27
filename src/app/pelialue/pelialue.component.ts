@@ -8,21 +8,32 @@ import {PeliService} from "../peli.service";
   styleUrls: ['./pelialue.component.css']
 })
 export class PelialueComponent implements OnInit {
-  kysymykset: Kysymys[] = [];
+  kysymykset!: Kysymys[];
 
-  kysind = [1,2,3,4];
-  pisteetmax = 0;
-  vastpisteet = 0;
-  pisteetyht = 0;
-  id = 1;
-  palaute = " ";
+  kysind: number[] = [1,2,3,4];
+  pisteetmax: number = 0;
+  vastpisteet: number = 0;
+  pisteetyht: number = 0;
+  id: number = this.kysind[Math.floor(Math.random() * this.kysind.length)];
+  palaute: string = " ";
+
 
   constructor(private peliService: PeliService) { }
 
   ngOnInit(): void {
     this.peliService.getKysymys().subscribe((data) => (this.kysymykset = data));
   }
-  valinta(){
+  haku(){
+    for(let i = 0; i < this.kysymykset.length; i++){
+      if (this.kysymykset[i].id === this.id){
+        return i;
+      }
+    }
+    return 0;
+  }
+
+  valinta(vastaus: object){
+
 
   }
 }

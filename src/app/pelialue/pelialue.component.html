@@ -1,5 +1,14 @@
+
+<div class="pist"><h3 class="otsikot" id="pisteet">Pisteet: {{vastpisteet }}/{{pisteetmax}} ,Yhteensä: {{pisteetyht}}</h3> </div>
+<div class="inf"><h3 class="otsikot" id="info">{{palaute}}</h3> </div>
+<div class="kys"> <h3 class="otsikot" id="kysymys">{{kysymykset[haku()].kysymys}}</h3></div>
+
+
+
+
+
 <ng-container *ngFor="let vastaus of kysymykset[haku()].Vastaukset">
-  <app-nappi  [text]="vastaus.nimi" (btnClick)="valinta(vastaus)"></app-nappi>
+  <div class="buttonsd" ><app-nappi  [text]="vastaus.nimi" (btnClick)="valinta(vastaus)"></app-nappi></div>
 </ng-container>
 
 

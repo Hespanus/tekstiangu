@@ -13,3 +13,29 @@ body {
 
   height: 70px;
 }
+.kys{
+  margin-bottom: 20px;
+  width: 330px;
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid black;
+
+}
+
+
+.otsikot {
+  font-size: 14px;
+  width: 330px;
+}
+.inf{
+  margin-bottom: 0px;
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid black;
+  width: 330px;
+}
+
+.pist{
+  margin: 0px;
+
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid black;
+}

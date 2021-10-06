@@ -8,8 +8,8 @@ import {PeliService} from "../peli.service";
   styleUrls: ['./pelialue.component.css']
 })
 export class PelialueComponent implements OnInit {
-  kysymykset!: Kysymys[];
 
+  kysymykset: Kysymys[] = [];
   kysind: number[] = [1,2,3,4];
   pisteetmax: number | undefined = 0;
   vastpisteet: number = 0;
@@ -17,11 +17,13 @@ export class PelialueComponent implements OnInit {
   id: number = this.kysind[Math.floor(Math.random() * this.kysind.length)];
   palaute: string = " ";
 
+  tiedosto: string = 'peli.json';
+
 
   constructor(private peliService: PeliService) { }
 
   ngOnInit(): void {
-    this.peliService.getKysymys().subscribe((data) => (this.kysymykset = data));
+    this.peliService.getKysymys(this.tiedosto).subscribe((data) => (this.kysymykset = data));
   }
   haku(){
     for(let i = 0; i < this.kysymykset.length; i++){

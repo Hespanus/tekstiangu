@@ -1,0 +1,7 @@
+<div class="artikkeli" *ngIf="artikkeli">
+
+  <h2>{{artikkeli.otsikko}}</h2>
+
+  <p *ngFor="let teksti of artikkeli.data">{{teksti.kappale}}</p>
+
+</div>

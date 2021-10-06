@@ -1,1 +1,9 @@
 
+ .peli{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 95vh;
+  align-items: center;
+  background-color: aquamarine;
+}

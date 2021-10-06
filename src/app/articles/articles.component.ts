@@ -17,10 +17,10 @@ export class ArticlesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private peliService: PeliService, private router: Router) {
     this.router.events.subscribe( (value   ) => {
-        if(value instanceof NavigationEnd){
+        if(value instanceof NavigationEnd ){
           let s = value.url.split("/");
           let idi = s[s.length-1];
-          console.log(idi)
+          console.log(this.route.snapshot.paramMap.keys)
 
           this.peliService.getArtikkeli('aasiakas'+idi+'.json').subscribe((data) => (this.artikkeli = data));
         }

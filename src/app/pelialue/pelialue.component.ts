@@ -25,17 +25,21 @@ export class PelialueComponent implements OnInit {
   ngOnInit(): void {
     this.peliService.getKysymys(this.tiedosto).subscribe((data) => (this.kysymykset = data));
   }
+
+  arvonta() {
+    this.id = this.kysind[Math.floor(Math.random() * this.kysind.length)];
+  }
   haku(){
     for(let i = 0; i < this.kysymykset.length; i++){
       if (this.kysymykset[i].id === this.id){
+        console.log(i)
         return i;
+
       }
     }
     return 0;
   }
-  arvonta() {
-    this.id = this.kysind[Math.floor(Math.random() * this.kysind.length)];
-  }
+
   valinta(vastaus: object){
     for (let i = 0; i < this.kysind.length; i++) {
       if (this.kysind[i] === this.id) {

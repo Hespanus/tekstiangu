@@ -19,7 +19,7 @@ export class PelialueComponent implements OnInit {
   palaute: string = " ";
 
   tiedosto: string = 'index';
-  file: string = "";
+  file: string = "print?id=1";
   testi: string = "";
 
 

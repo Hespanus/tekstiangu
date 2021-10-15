@@ -2,7 +2,7 @@
  .peli{
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   height: 95vh;
   align-items: center;
   background-color: aquamarine;

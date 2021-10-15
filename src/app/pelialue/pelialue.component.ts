@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Kysymys} from '../kysymys';
 import {PeliService} from "../peli.service";
+import {Pelaaja} from "../pelaaja";
 
 @Component({
   selector: 'app-pelialue',
@@ -8,8 +9,8 @@ import {PeliService} from "../peli.service";
   styleUrls: ['./pelialue.component.css']
 })
 export class PelialueComponent implements OnInit {
-
-  kysymykset: Kysymys[] = [];
+  pelaaja!: Pelaaja[];
+  kysymykset!: Kysymys[];
   kysind: number[] = [1,2,3,4];
   pisteetmax: number | undefined = 0;
   vastpisteet: number = 0;
@@ -17,13 +18,16 @@ export class PelialueComponent implements OnInit {
   id: number = this.kysind[Math.floor(Math.random() * this.kysind.length)];
   palaute: string = " ";
 
-  tiedosto: string = 'peli.json';
+  tiedosto: string = 'index';
+  file: string = "";
+  testi: string = "";
 
 
   constructor(private peliService: PeliService) { }
 
   ngOnInit(): void {
     this.peliService.getKysymys(this.tiedosto).subscribe((data) => (this.kysymykset = data));
+    this.peliService.getPelaaja(this.file).subscribe((data) => (this.pelaaja = data));
   }
 
   arvonta() {
@@ -32,9 +36,7 @@ export class PelialueComponent implements OnInit {
   haku(){
     for(let i = 0; i < this.kysymykset.length; i++){
       if (this.kysymykset[i].id === this.id){
-        console.log(i)
         return i;
-
       }
     }
     return 0;

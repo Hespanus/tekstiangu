@@ -1,6 +1,6 @@
 
 
-<div class="pelaaja"><p>{{pelaaja}}</p></div>
+<div class="pelaaja" *ngIf="pelaaja"><p>{{pelaaja[0]}}</p></div>
 
 <div class="peli" *ngIf="kysymykset">
 
@@ -17,6 +17,7 @@
   </ng-container>
 
 </div>
+
 
 
 

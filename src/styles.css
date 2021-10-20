@@ -2,16 +2,21 @@ body{
   background-color: aquamarine;
 }
 
-.links{
+.links {
   font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: space-evenly;
   background-color: burlywood;
   padding: 5px;
-
-
 }
+.pelaaja{
+  padding: 1em;
+  font-size: 1.4em;
+  display: flex;
+  justify-content: end;
+}
+
 .napit {
 
   width: 330px;
@@ -46,5 +51,4 @@ body{
   border: 1px solid black;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

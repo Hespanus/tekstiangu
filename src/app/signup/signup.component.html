@@ -1,29 +1,33 @@
-<div class="login-wrapper" fxLayout="column" fxLayoutAlign="end">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="box">
     <mat-card-header>
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
 
-    <form class="example-form" >
+    <form #f = "ngForm" class="example-form" (ngSubmit)="onSubmit(f)">
 
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username">
+          <input name="uname" matInput placeholder="Username" >
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email">
+          <input name = "Fname" matInput placeholder="Fname">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password">
+          <input name = "Lname" matInput placeholder="Lname">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input name = "Pword" matInput placeholder="Password">
         </mat-form-field>
 
 
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block">Register</button>
+      <button  mat-stroked-button color="accent" type="submit" class="btn-block">Register</button>
 
     </form>
   </mat-card>

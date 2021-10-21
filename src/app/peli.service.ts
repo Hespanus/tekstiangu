@@ -7,12 +7,12 @@ import {Artikkeli} from "./artikkeli";
 import {Pelaaja} from "./pelaaja";
 import {tsCastToAny} from "@angular/compiler-cli/src/ngtsc/typecheck/src/ts_util";
 
-/*const httpOptions = {
+const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type':  'application/x-www-form-urlencoded',
     Authorization: 'my-auth-token'
   })
-};*/
+};
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +35,8 @@ export class PeliService {
   getPelaaja(file: string): Observable<Pelaaja[]> {
     return this.http.get<Pelaaja[]>(this.apiUrl + file);
   }
-  addPlayer(): Observable<any>{
-    return this.http.post<any>(this.playerUrl, )
+  addPlayer(signupdata:string): Observable<any>{
+    return this.http.post<any>(this.playerUrl, signupdata, httpOptions);
 
   }
 

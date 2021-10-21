@@ -10,7 +10,10 @@ import {PeliService} from "../peli.service";
 })
 export class SignupComponent implements OnInit {
 
-
+  uname = '';
+  fname = '';
+  lname = '';
+  pword = '';
 
   constructor(private peliService: PeliService) { }
 
@@ -18,6 +21,11 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-
+    this.peliService.addPlayer("uname="+this.uname+"&fname="+this.fname+"&lname="+this.lname+"&pword="+this.pword)
+      .subscribe(
+        response => console.log('Success!', response),
+        error => console.log('Error', error)
+      );
+    f.reset();
   }
 }

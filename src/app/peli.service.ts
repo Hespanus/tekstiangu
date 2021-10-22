@@ -39,6 +39,9 @@ export class PeliService {
     return this.http.post<any>(this.playerUrl, signupdata, httpOptions);
 
   }
+  login(signindata:string): Observable<any>{
+    return this.http.post<any>(this.)
+  }
 
  /* private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

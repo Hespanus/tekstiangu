@@ -1,6 +1,6 @@
 <div class="links"><a [routerLink]="'/peli'">Peli</a> <a [routerLink]="'/artikkelit/1'">Kyselijä</a><a [routerLink]="'/artikkelit/2'">Myyjän vika</a>
-  <a [routerLink]="'/login'">Kirjaudu</a><a [routerLink]="'/signup'">Luo tili</a> </div>
-
+  <a [routerLink]="'/login'" *ngIf="!currentUser">Kirjaudu</a><a [routerLink]="'/login'" *ngIf="currentUser">Kirjaudu ulos</a><a [routerLink]="'/signup'">Luo tili</a> </div>
+<div class="pelaaja" *ngIf="currentUser"><p>Logged in as: {{currentUser.username}}</p></div>
 
 
 

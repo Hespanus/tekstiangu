@@ -18,42 +18,29 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PeliService {
-  private apiUrl = 'http://localhost/';
+  private apiUrl = 'http://159.223.21.84/';
 
-  private playerUrl = 'http://localhost/addplayer';
-
+  private playerUrl = 'http://159.223.21.84/addplayer';
 
 
   constructor(private http: HttpClient) {
   }
+
   getKysymys(file: string): Observable<Kysymys[]> {
     return this.http.get<Kysymys[]>(this.apiUrl + file);
   }
+
   getArtikkeli(file: string): Observable<Artikkeli> {
     return this.http.get<Artikkeli>(this.apiUrl + file);
   }
-  getPelaaja(file: string): Observable<Pelaaja[]> {
-    return this.http.get<Pelaaja[]>(this.apiUrl + file);
-  }
-  addPlayer(signupdata:string): Observable<any>{
+
+
+
+  addPlayer(signupdata: string): Observable<any> {
     return this.http.post<any>(this.playerUrl, signupdata, httpOptions);
 
   }
-  login(signindata:string): Observable<any>{
-    return this.http.post<any>(this.)
-  }
 
- /* private handleError(error: HttpErrorResponse) {
-    if (error.status === 0) {
 
-      console.error('An error occurred:', error.error);
-    } else {
 
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-
-    return throwError(
-      'Something bad happened; please try again later.');
-  }*/
 }

@@ -19,7 +19,7 @@ export class PelialueComponent implements OnInit {
   palaute: string = " ";
 
   tiedosto: string = "index";
-  file: string = "print?id=1";
+
   testi: string = "";
 
 
@@ -27,7 +27,7 @@ export class PelialueComponent implements OnInit {
 
   ngOnInit(): void {
     this.peliService.getKysymys(this.tiedosto).subscribe((data) => (this.kysymykset = data));
-    this.peliService.getPelaaja(this.file).subscribe((data) => (this.pelaaja = data));
+
   }
 
   arvonta() {

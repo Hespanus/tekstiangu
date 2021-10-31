@@ -2,21 +2,26 @@
 
   <mat-card class="box">
     <mat-card-header>
-      <mat-card-title>Log in</mat-card-title>
+      <mat-card-title *ngIf="!currentUser">Log in</mat-card-title>
+      <mat-card-title *ngIf="currentUser">Log out</mat-card-title>
     </mat-card-header>
 
-    <form #log ="ngForm" class="example-form" (ngSubmit)="onSubmit(log)">>
+    <form #log ="ngForm" class="example-form" (ngSubmit)="onSubmit(log)">
       <mat-card-content>
-        <mat-form-field class="example-full-width">
-          <input type="text" [(ngModel)]="username" matInput placeholder ="Username">
+        <mat-form-field *ngIf="!currentUser" class="example-full-width">
+          <input type="text" [(ngModel)]="username" name="uname" matInput placeholder ="Username">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input type="text" [(ngModel)]="password" matInput placeholder="Password">
+        <mat-form-field *ngIf="!currentUser" class="example-full-width">
+          <input  type="text" [(ngModel)]="password" name="pword" matInput placeholder="Password">
         </mat-form-field>
       </mat-card-content>
-      <button mat-stroked-button color="accent" type="submit" class="btn-block">Log in</button>
+      <button *ngIf="!currentUser" mat-stroked-button color="accent" type="submit" class="btn-block">Log in</button>
+      <button *ngIf="currentUser"  mat-stroked-button color="accent" type="submit" class="btn-block">Log out</button>
+
     </form>
+
+
   </mat-card>
 
 </div>

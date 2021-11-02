@@ -18,7 +18,7 @@ export class PelialueComponent implements OnInit {
   id: number = this.kysind[Math.floor(Math.random() * this.kysind.length)];
   palaute: string = " ";
 
-  tiedosto: string = "index";
+  tiedosto: string = "index.php";
 
   testi: string = "";
 

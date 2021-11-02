@@ -18,9 +18,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PeliService {
-  private apiUrl = 'http://159.223.21.84/';
+  private apiUrl = 'http://localhost/';
 
-  private playerUrl = 'http://159.223.21.84/addplayer';
+  private playerUrl = 'http://localhost/addplayer/';
 
 
   constructor(private http: HttpClient) {
